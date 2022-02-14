@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_ik/helpers/navigation_service.dart';
 
@@ -12,7 +13,7 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(text),
       leading: IconButton(
-          splashRadius: 20,
+          splashRadius: 20.r,
           onPressed: () {
             NavigationService.goBack;
           },
