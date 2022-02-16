@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_ik/constants/app_color.dart';
 
 
 class CustomTheme {
@@ -14,26 +15,25 @@ class CustomTheme {
       textTheme: 
          TextTheme(
         //  final head1 = Theme.of(context).textTheme.headline1; // Bold 18
-        //  final head2 = Theme.of(context).textTheme.headline2; //Normal 18 ash
-        //  final head3 = Theme.of(context).textTheme.headline3;//Bold 16 purple
-        // final head4 = Theme.of(context).textTheme.headline4; // 16, normal, black
+        //  final head2 = Theme.of(context).textTheme.headline2; //Normal 18
+        //  final head3 = Theme.of(context).textTheme.headline3;//Bold 16
+        // final head4 = Theme.of(context).textTheme.headline4; // 16, normal
+        // final head5 = Theme.of(context).textTheme.headline5; // 14, normal
         // final body1 = Theme.of(context).textTheme.bodyText1; //16,Bold,black
         // final body2 = Theme.of(context).textTheme.bodyText2; //16,normal, ash
-        // final sub1 = Theme.of(context).textTheme.subtitle1; //14,normal, black
-        // final sub2 = Theme.of(context).textTheme.subtitle2; //14,normal, purple
+        // final sub1 = Theme.of(context).textTheme.subtitle1; //12,bold,
+        // final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
 
 
-           headline1: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold,color:Colors.black,),
-           headline2: TextStyle(fontSize:18.sp,fontWeight: FontWeight.normal,color:const Color(0xFFB0B0B0),),
-           headline3: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,color: Colors.purpleAccent),
-           headline4: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.normal,color: Colors.black),
-           headline5: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.normal,color: Colors.black),
-           headline6: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold,color: Colors.purpleAccent),
-           bodyText1: TextStyle(fontSize:16.sp,fontWeight: FontWeight.bold,color: Colors.black),
-           bodyText2: TextStyle(fontSize:14.sp,fontWeight: FontWeight.normal,color:const Color(0xFFB0B0B0),),
-           //:TextStyle( fontSize: 14.sp, fontWeight: FontWeight.normal,color: Colors.black),
-           subtitle1: TextStyle( fontSize: 14.sp, fontWeight: FontWeight.bold,color: Colors.black),
-           subtitle2: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.normal,color: Colors.purpleAccent),
+           headline1: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold,),
+           headline2: TextStyle(fontSize:18.sp,fontWeight: FontWeight.normal,),
+           headline3: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,),
+           headline4: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.normal,),
+           headline5: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.normal,),
+           headline6: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold,),
+           bodyText1: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,),
+           subtitle1: TextStyle( fontSize: 12.sp, fontWeight: FontWeight.bold,),
+           subtitle2: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.normal,),
 
            button: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold,color: Colors.white),
 
@@ -41,14 +41,14 @@ class CustomTheme {
         ),
           //TabBar Theme
           tabBarTheme: TabBarTheme(
-            labelColor: const Color(0xFFEA12B9),
+            labelColor: AppColors.highLightText,
             labelStyle: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold),
             labelPadding: EdgeInsets.only(bottom: 20.h),
             unselectedLabelColor: Colors.black,
             unselectedLabelStyle: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold),
             //indicatorWeight: 5.h,
             indicator: UnderlineTabIndicator(
-              borderSide: BorderSide(width: 5.h,color: Colors.purpleAccent)
+              borderSide: BorderSide(width: 5.h,color: AppColors.highLightText)
             ),
 
           ),

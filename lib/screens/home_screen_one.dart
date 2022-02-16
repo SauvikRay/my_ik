@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/model/menu_model.dart';
 import 'package:my_ik/screens/my_ik_screen.dart';
 import 'package:my_ik/screens/pedidos_details_screen.dart';
@@ -37,6 +38,8 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
 
   @override
   Widget build(BuildContext context) {
+    final head5 = Theme.of(context).textTheme.headline5; // 14, normal
+    final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
     return SafeArea(
         child: Scaffold(
           body:SizedBox(
@@ -64,9 +67,9 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children:<Widget> [
                           IconButton(onPressed: (){},
-                            icon: Icon(Icons.keyboard_arrow_up_outlined,size: 30.h,color: Colors.purpleAccent,),),
-                           Text('ESCOLHA O TIPO DE SERVIÇO',style: TextStyle(fontSize: 14.sp,color: Colors.black,letterSpacing: 3.0,),),
-                           Text('Clique aqui para escolher o seu tipo de encomenda!',style: TextStyle(fontSize: 12.sp,color: Colors.black26,),),
+                            icon: Icon(Icons.keyboard_arrow_up_outlined,size: 30.h,color: AppColors.highLightText,),),
+                           Text('ESCOLHA O TIPO DE SERVIÇO',style: head5?.copyWith(color: Colors.black,letterSpacing: 3),),
+                           Text('Clique aqui para escolher o seu tipo de encomenda!',style: sub2?.copyWith(color: AppColors.shadowText2),),
                         ],
                       ),
                     ),

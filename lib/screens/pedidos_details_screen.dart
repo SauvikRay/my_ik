@@ -60,6 +60,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
           ],
         ),
         body: Container(
+          margin: EdgeInsets.only(top: 10.h),
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           height: double.infinity,
           width: double.infinity,
@@ -89,7 +90,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                                 horizontal: 10.w, vertical: 10.w),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50.r),
-                                color: AppColors.textBoxText),
+                                color: AppColors.shadowText),
                             child: SvgPicture.asset(
                               'assets/icons/perfil_line_icon.svg',
                               color: const Color(0XFFBDBEC6),
@@ -369,7 +370,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                 ),
                  Text(
                   'Produto Individual - Tipo 0',
-                  style: head4,
+                  style: head4?.copyWith(color: Colors.purpleAccent),
                 ),
                 const Divider(
                   thickness: 1,

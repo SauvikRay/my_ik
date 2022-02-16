@@ -6,14 +6,16 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../constants/app_color.dart';
 import '../constants/app_consotants.dart';
+import '../widget/material_button.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final head2 = Theme.of(context).textTheme.headline2;
+    final head3 = Theme.of(context).textTheme.headline3;
     final head4 = Theme.of(context).textTheme.headline4;
-    final body1 = Theme.of(context).textTheme.bodyText1;
+
     return  Column(
       children: [
         Form(
@@ -24,7 +26,7 @@ class LoginScreen extends StatelessWidget {
                   border:OutlineInputBorder(borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(10.r),),
                   filled: true,
-                  fillColor:AppColors.textBoxText,
+                  fillColor:AppColors.shadowText,
                   contentPadding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 15.h) ,
                   hintText: AppRegFormText.regEmail,
                   hintStyle:head2,
@@ -40,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                   border:OutlineInputBorder(borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(10.r),),
                   filled: true,
-                  fillColor: AppColors.textBoxText,
+                  fillColor: AppColors.shadowText,
                   contentPadding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 15.h) ,
                   hintText: AppRegFormText.palavraPasse,
                   hintStyle:head2,
@@ -51,23 +53,20 @@ class LoginScreen extends StatelessWidget {
           ) ,
         ),
 
-        MaterialButton(
-          onPressed: (){
+        customeButton(
+            context: context,
+            name: 'Login',
+            onCallBack: () {
 
-          },
-          child: Text('Login',style: Theme.of(context).textTheme.button,),
-          height: 50.h,
-          minWidth: double.infinity,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r),),
-          color:AppColors.buttonColor,
+            }
         ),
          SizedBox(height: 20.h,),
         TextButton(onPressed: (){},
-        child: Text('Recuperar password',style: body1),),
+        child: Text('Recuperar password',style: head3?.copyWith(color: Colors.black),),),
          SizedBox(height: 30.h,),
-        Text('Ao iniciar, aceita os nossos',style: head4,),
+        Text('Ao iniciar, aceita os nossos',style: head4?.copyWith(color: Colors.black),),
         TextButton(onPressed: (){},
-          child: Text('Termos e Condições',style: body1,),),
+          child: Text('Termos e Condições',style: head3?.copyWith(color: Colors.black,decoration: TextDecoration.underline),),),
       ],
     );
   }

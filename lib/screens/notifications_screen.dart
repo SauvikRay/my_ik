@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/widget/app_bar_widget.dart';
 import 'package:my_ik/widget/navigation_widget.dart';
 class NotificationScreen extends StatefulWidget {
@@ -12,14 +14,17 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
+    final head1 = Theme.of(context).textTheme.headline1; // Bold 18
+    final head4 = Theme.of(context).textTheme.headline4; // 16, normal
+    final head5 = Theme.of(context).textTheme.headline5; // 14, normal
     return SafeArea(
       child: Scaffold(
         backgroundColor:const Color(0xFFE5E5E5),
         appBar: const MainAppBarWidget(text:' Notificações',),
         body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+          height: double.infinity,
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.w),
           child: Center(
             child: Stack(
               children:<Widget>[
@@ -29,19 +34,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          padding: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.purpleAccent),
+                          padding: EdgeInsets.all(10.w),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r),color: AppColors.highLightText),
                           child:Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children:const <Widget> [
-                              Text('Lorem ipsum dolor',style: TextStyle(fontFamily: 'Poppins',fontSize: 18.0,fontWeight: FontWeight.bold,color: Colors.white),),
-                              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',style: TextStyle(fontFamily: 'Poppins',fontSize: 16.0,color: Colors.white),),
+                            children: <Widget> [
+                              Text('Lorem ipsum dolor',style:head1?.copyWith(color: Colors.white),),
+                              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',style:head4?.copyWith(color: Colors.white),),
                             ],
                           ) ,
 
                         ),
-                        const SizedBox(height: 10.0,),
-                        const Text('2022-01-19| 15:46',style: TextStyle(fontFamily: 'Poppins',fontSize: 14.0,fontWeight: FontWeight.normal,color: Colors.black26),),
+                         SizedBox(height: 10.h,),
+                         Text('2022-01-19| 15:46',style: head5?.copyWith(color: Colors.black.withOpacity(0.5),),),
                       ],
 
                     ),
@@ -49,26 +54,26 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          padding: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.purpleAccent),
+                          padding: EdgeInsets.all(10.w),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r),color: AppColors.highLightText),
                           child:Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children:const <Widget> [
-                              Text('Lorem ipsum dolor',style: TextStyle(fontFamily: 'Poppins',fontSize: 18.0,fontWeight: FontWeight.bold,color: Colors.white),),
-                              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',style: TextStyle(fontFamily: 'Poppins',fontSize: 16.0,color: Colors.white),),
+                            children: <Widget> [
+                              Text('Lorem ipsum dolor',style:head1?.copyWith(color: Colors.white),),
+                              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',style:head4?.copyWith(color: Colors.white),),
                             ],
                           ) ,
 
                         ),
-                        const SizedBox(height: 10.0,),
-                        const Text('2022-01-19| 15:30',style: TextStyle(fontFamily: 'Poppins',fontSize: 14.0,fontWeight: FontWeight.normal,color: Colors.black26),),
+                        SizedBox(height: 10.h,),
+                        Text('2022-01-19| 15:46',style: head5?.copyWith(color: Colors.black.withOpacity(0.5),),),
                       ],
 
                     ),
                   ],
                 ),
-             const Positioned(
-                  bottom: 30,
+              Positioned(
+                  bottom: 30.h,
                     child: BottomNavigationWidget(),
              ),
               ],

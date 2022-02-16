@@ -25,9 +25,6 @@ class HomeScreenTwo extends StatefulWidget {
 
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
-
- 
-
   List<ExpandedItem> expandedItems =[
     ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: 'produto'),
     ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: 'produto'),
@@ -85,18 +82,13 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                             const SizedBox(height: 20,),
                             Expanded(
                                 child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: expandedItems.length,
-                              itemBuilder: (BuildContext context, int index) {
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemCount: expandedItems.length,
+                                itemBuilder: (BuildContext context, int index) {
                                 return ExpandedWidget(expandedItem: expandedItems[index]);
                               },
                             ),
                             ),
-                          
-                        
-                            
-                          
-
                           ],
                         ),
                       ),

@@ -50,8 +50,8 @@ class _PerfilScreenState extends State<PerfilScreen> {
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),border:Border.all(color: Colors.white,width: 5.0),),
                           child: SvgPicture.asset('assets/icons/perfil_line_icon.svg',color:const Color(0XFFBDBEC6),),
                         ),
-                       Text('Carlos',style: head1),
-                        Text('nome@example.com',style: head5),
+                       Text('Carlos',style: head1?.copyWith(color: Colors.black),),
+                        Text('nome@example.com',style: head5?.copyWith(color: Colors.black)),
                       ],
                     ),
                     const Divider(color: Colors.black26,thickness: 1,),
@@ -74,7 +74,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text('Carlos',
-                              style:head4,
+                              style:head2?.copyWith(color: Colors.black),
                             ),
                           ),
                         ),
@@ -91,14 +91,14 @@ class _PerfilScreenState extends State<PerfilScreen> {
                     Row(
                       children: [
                         Container(
-                          padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 15.h),
+                          padding:  EdgeInsets.symmetric(horizontal: 10.w,),
                           decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.r),color: const Color(0xFFEAEBF2)),
                           height: 50.h,
                           width:MediaQuery.of(context).size.width-40.w,
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text('nome@example.com',
-                              style:head4,
+                              style:head2?.copyWith(color: Colors.black),
                             ),
                           ),
                         ),
@@ -115,7 +115,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                     Row(
                       children: [
                         Container(
-                          padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 15.h),
+                          padding:  EdgeInsets.symmetric(horizontal: 10.w,),
                           decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.r),color: const Color(0xFFEAEBF2)),
                           height: 50.h,
                           width:MediaQuery.of(context).size.width-40.w,
@@ -128,7 +128,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                                  Expanded(
                                    flex: 6,
                                   child: Text('+351 123 456 798',
-                                    style:head4),
+                                    style:head2?.copyWith(color: Colors.black)),
                                   ),
                                 Expanded ( child: SvgPicture.asset('assets/icons/right_mark.svg'))
                               ],

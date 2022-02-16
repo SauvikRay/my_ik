@@ -9,7 +9,7 @@ class MenuWidget extends StatelessWidget {
   final MenuItem menuItem;
   @override
   Widget build(BuildContext context) {
-     final head4 = Theme.of(context).textTheme.headline4; // 16, normal, black
+     final head2 = Theme.of(context).textTheme.headline2; // 16, normal, black
     return Column(children: <Widget>[
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -26,7 +26,7 @@ class MenuWidget extends StatelessWidget {
           Expanded(
               child: Text(
             menuItem.menuText,
-            style: head4,
+            style: head2?.copyWith(color: Colors.black),
           ),),
           IconButton(
               onPressed: () {

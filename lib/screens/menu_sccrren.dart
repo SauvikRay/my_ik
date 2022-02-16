@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/helpers/all_routes.dart';
 import 'package:my_ik/model/menu_model.dart';
 import 'package:my_ik/widget/menu_widget.dart';
@@ -34,17 +35,18 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final head5 = Theme.of(context).textTheme.headline5; // 14, normal
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFE5E5E5),
         body: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const SizedBox(
-              height: 30.0,
+             SizedBox(
+              height: 30.h,
             ),
              Text(
               'Menu',
@@ -69,13 +71,9 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
             ),
-            const Text(
+             Text(
               'Version 1.2.3',
-              style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black26),
+              style:head5?.copyWith(color: AppColors.shadowText2) ,
             ),
           ]),
         ),
