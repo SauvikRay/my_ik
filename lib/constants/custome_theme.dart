@@ -19,13 +19,13 @@ class CustomTheme {
         //  final head3 = Theme.of(context).textTheme.headline3;//Bold 16
         // final head4 = Theme.of(context).textTheme.headline4; // 16, normal
         // final head5 = Theme.of(context).textTheme.headline5; // 14, normal
-        // final body1 = Theme.of(context).textTheme.bodyText1; //16,Bold,black
+        // final body1 = Theme.of(context).textTheme.bodyText1; //20,Bold
         // final body2 = Theme.of(context).textTheme.bodyText2; //16,normal, ash
         // final sub1 = Theme.of(context).textTheme.subtitle1; //12,bold,
         // final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
 
 
-           headline1: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold,),
+           headline1: TextStyle(fontSize:18.sp,fontWeight: FontWeight.bold,), 
            headline2: TextStyle(fontSize:18.sp,fontWeight: FontWeight.normal,),
            headline3: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,),
            headline4: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.normal,),

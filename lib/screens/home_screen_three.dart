@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:my_ik/model/menu_model.dart';
@@ -28,33 +29,34 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
 
   @override
   Widget build(BuildContext context) {
+     final head5 = Theme.of(context).textTheme.headline5; 
     return SafeArea(
         child: Scaffold(
           body:SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width:  MediaQuery.of(context).size.width,
+            height: double.infinity,
+            width:  double.infinity,
             child: Stack(
               alignment: Alignment.center,
               children:<Widget>[
                 GoogleMapWidget(),
                Positioned(
-                 top: 30,
+                 top: 30.h,
                    child: Material(
                      color: Colors.transparent,
                      child: InkWell(
                        onTap: (){},
                        child: Card(
                          shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(20.0),
+                           borderRadius: BorderRadius.circular(20.r),
                          ),
 
                          child: Padding(
-                           padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                           padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
                            child: Row(
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: <Widget>[
                             SvgPicture.asset('assets/icons/focus_icon.svg'),
-                               const Text('INDIQUE O LOCAL DA RECOLHA',style: TextStyle(letterSpacing: 2.0,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
+                                Text('INDIQUE O LOCAL DA RECOLHA',style:head5?.copyWith(color: Colors.black,letterSpacing: 2) ,),
                              ],
                            ),
                          ),
@@ -63,14 +65,14 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
                    ),
                ),
                 Positioned(
-                  top: 90,
+                  top: 90.h,
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: (){},
                       child: Card(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(20.r),
                         ),
 
                         child: Padding(
@@ -79,7 +81,7 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               SvgPicture.asset('assets/icons/location_outline_icon.svg'),
-                              const Text('INDIQUE O LOCAL DA ENTREGA',style: TextStyle(letterSpacing: 2.0,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
+                              Text('INDIQUE O LOCAL DA ENTREGA',style:head5?.copyWith(color:Colors.black,letterSpacing: 2,),),
                             ],
                           ),
                         ),
@@ -89,8 +91,8 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
                 ),
 
                Positioned(
-                   bottom: 130,
-                 right: 30,
+                   bottom: 130.h,
+                 right: 30.w,
                child: ClipOval(
                  child: Material(
                     // Button color
@@ -98,22 +100,21 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
                      splashColor: Colors.white, // Splash color
                      onTap: () {},
                      child:  Container(
-                              padding:const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Colors.purpleAccent.shade100),
+                              padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),color: Colors.purpleAccent.shade100),
                               child: Container(
-                                height:40,
-                                  width: 40,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Colors.purpleAccent),
-                                  child: SvgPicture.asset('assets/icons/focus_icon.svg',width: 15,height: 15,color:  Colors.white, fit: BoxFit.scaleDown)),
+                                height:40.w,
+                                  width: 40.w,
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),color: Colors.purpleAccent),
+                                  child: SvgPicture.asset('assets/icons/focus_icon.svg',width: 15.w,height: 15.w,color:  Colors.white, fit: BoxFit.scaleDown)),
                             ),
                           ),
                      // SizedBox(width: 56, height: 56, child: Icon(Icons.menu)),
                    ),
                  ),
                ),
-               const Positioned(
-                  bottom: 30.0,
-
+                Positioned(
+                  bottom: 30.h,
                   //This Section is for Navigation Bar
                   child: BottomNavigationWidget(),
                 ),

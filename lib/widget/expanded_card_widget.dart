@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/model/expanded_model.dart';
 class ExpandedWidget extends StatelessWidget {
   const ExpandedWidget({Key? key,required this.expandedItem}) : super(key: key);
@@ -7,6 +9,8 @@ class ExpandedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final head3 = Theme.of(context).textTheme.headline3; // Bold 18
+     final head5 = Theme.of(context).textTheme.headline5; // 14, normal
     return InkWell(
       onTap: (){},
       child: Column(
@@ -15,16 +19,16 @@ class ExpandedWidget extends StatelessWidget {
           Row(
             children:<Widget> [
               Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: SvgPicture.asset('assets/icons/${expandedItem.menuIcon}',color: Colors.purpleAccent,width: 24,height: 24,fit:BoxFit.scaleDown,),
+                padding: EdgeInsets.only(right: 10.w),
+                child: SvgPicture.asset('assets/icons/${expandedItem.menuIcon}',color: Colors.purpleAccent,width: 24.w,height: 24.w,fit:BoxFit.scaleDown,),
               ),
-               Expanded(child: Text(expandedItem.menuText,style: const TextStyle(fontFamily: 'Poppins',fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),)),
-              const Icon(Icons.arrow_forward_ios_rounded,color:Colors.purpleAccent,size: 20,),
+               Expanded(child: Text(expandedItem.menuText,style: head3?.copyWith(color: Colors.black),),),
+               Icon(Icons.arrow_forward_ios_rounded,color:AppColors.highLightText,size: 20.w,),
 
             ],),
           Row(children: <Widget> [
-            const SizedBox(width: 36,),
-            Text(expandedItem.menuSubText,style: const TextStyle(fontFamily: 'Poppins',fontSize: 14,fontWeight: FontWeight.normal,color: Colors.black26),),
+             SizedBox(width: 36.w,),
+            Text(expandedItem.menuSubText,style: head5?.copyWith(color: Colors.black26)),
 
           ],),
         ],

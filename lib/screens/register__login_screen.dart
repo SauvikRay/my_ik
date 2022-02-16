@@ -12,10 +12,10 @@ class RegisterLoginScreen extends StatefulWidget {
 }
 
 class _RegisterLoginScreenState extends State<RegisterLoginScreen>with TickerProviderStateMixin {
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     TabController _tabController = TabController(length: 2, vsync: this);
     return SafeArea(
       child: Scaffold(
@@ -35,98 +35,66 @@ class _RegisterLoginScreenState extends State<RegisterLoginScreen>with TickerPro
             ),
           ),
           child: SingleChildScrollView(
-            child:
-              Center(
-                child: Column(
+            child: Center(
+              child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                     SizedBox(height:20.h),
-                    //TODO: Container for logo
-                    SizedBox(
-                      child: Image.asset('assets/my_k.png',fit: BoxFit.scaleDown,width:100.w ,height: 100.w,),
-                    ),
-                     SizedBox(height:20.h),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20.w),
-                      height: 0.72.sh,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.r),
-                            topRight: Radius.circular(20.r),
-                          ),
-                          color: Colors.white),
-                      alignment: Alignment.bottomCenter,
-                      child:   Container(
-                        margin: EdgeInsets.symmetric(vertical: 20.h),
-                        child: Column(
-                          children: [
-                            TabBar(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
-                              controller: _tabController,
-                              tabs: const<Widget> [
-                              Text('Registar'),
-                              Text('Login'),
-                              ],
-                            ),
-                            Flexible(
-                             fit: FlexFit.loose,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                child: TabBarView(
-                                  controller: _tabController,
-                                  children:const <Widget> [
-                                    TextInputForm(),
-                                    LoginScreen(),
-                                  ],
-                                ),
-                              ),
-
-                            ),
-                          ],
-                        ),
-                      ),
-
-
-                      //TODO: white Container,
-                    ),
-
+                SizedBox(height:20.h),
+               //TODO: Container for logo
+               SizedBox(
+                 child: Image.asset('assets/my_k.png',fit: BoxFit.scaleDown,width:100.w ,height: 100.w,),
+               ),
+                SizedBox(height:20.h),
+               Container(
+                 margin: EdgeInsets.symmetric(horizontal: 20.w),
+                 height: (height<600) ? 0.85.sh :0.72.sh,
+                 width: double.infinity,
+                 decoration: BoxDecoration(
+                     borderRadius: BorderRadius.only(
+                       topLeft: Radius.circular(20.r),
+                       topRight: Radius.circular(20.r),
+                     ),
+                     color: Colors.white),
+                 alignment: Alignment.bottomCenter,
+                 child:Container(
+                   margin: EdgeInsets.symmetric(vertical: 20.h),
+                   child: Column(
+                     children: [
+                       TabBar(
+                         padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
+                         controller: _tabController,
+                         tabs: const<Widget> [
+                         Text('Registar'),
+                         Text('Login'),
+                         ],
+                       ),
+                       Flexible(
+                        fit: FlexFit.loose,
+                         child: Padding(
+                           padding: EdgeInsets.symmetric(horizontal: 20.w),
+                           child: TabBarView(
+                             controller: _tabController,
+                             children:const <Widget> [
+                               TextInputForm(),
+                               LoginScreen(),
+                             ],
+                           ),
+                         ),
+                   
+                       ),
+                     ],
+                   ),
+                 ),
+                 //TODO: white Container,
+               ),
+              
                   ],
                 ),
-              ),
-
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-// class SideCurvedTabIndicator extends Decoration{
-//
-//   final Color color;
-//   final double width;
-//   final double radius;
-//   SideCurvedTabIndicator({required this.color, required this.width,required this.radius});
-//   @override
-//   BoxPainter createBoxPainter([ VoidCallback onChanged]) {
-//     // TODO: implement createBoxPainter
-//  return _CurvedLinePainter(color:color,width:width,radius:radius);
-//   }
-//
-//
-// }
-// class _CurvedLinePainter extends BoxPainter{
-//   final Color color;
-//   final double width;
-//   final double radius;
-//   _CurvedLinePainter({required this.color, required this.width,required this.radius});
-//   @override
-//   @override
-//   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-//     // TODO: implement paint
-//     canvas.drawLine(p1, p2, paint)
-//   }
-//
-// }
 

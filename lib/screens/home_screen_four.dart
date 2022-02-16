@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:my_ik/model/expanded_model.dart';
@@ -32,22 +33,22 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
     return SafeArea(
         child: Scaffold(
           body:SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width:  MediaQuery.of(context).size.width,
+            height:double.infinity,
+            width:double.infinity,
             child: Stack(
               alignment: Alignment.center,
               children:<Widget>[
                GoogleMapWidget(),
-             const Positioned(
-                  bottom: 30.0,
+              Positioned(
+                  bottom: 30.h,
                   //This Section is for Navigation Bar
                   child: BottomNavigationWidget(),
                 ),
 
                 //For Overlay
                 Container(
-                  height: MediaQuery.of(context).size.height,
-                  width:  MediaQuery.of(context).size.width,
+                  height: double.infinity,
+                  width:  double.infinity,
                   decoration: BoxDecoration(gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -59,17 +60,17 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
                 ),
                 //For IKTOKEN
                 Positioned(
-                  bottom: 220,
+                  bottom: 220.h,
                   child: SizedBox(
-                    height: 310,
-                    width: MediaQuery.of(context).size.width*0.9,
+                    height: 310.h,
+                    width: 0.9.sw,
                     child: Card(
                       color: Colors.white,
                       elevation: 5.0,
-                      margin: const EdgeInsets.all(10),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      margin:  EdgeInsets.all(10.w),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                        padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
                         child: Column(
                           children:<Widget>[
                             Row(
@@ -77,10 +78,10 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
                               children: [
                                 Expanded(child: const Text('IKTOKEN DO EXECUTIVO',style: TextStyle(letterSpacing: 2.0,fontSize: 14.0,color: Colors.black,fontFamily: 'Poppins'),)),
                                 Container(
-                                  width: 36,
-                                  height: 36,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),border: Border.all(width: 2,color: Colors.black),),
-                                  child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',height: 20,width: 20,),iconSize: 30,),
+                                  width: 36.w,
+                                  height: 36.w,
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),border: Border.all(width: 2,color: Colors.black),),
+                                  child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',height: 20.w,width: 20.w, fit: BoxFit.contain,),),
 
                                 ),
                               ],
@@ -98,8 +99,6 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
                                     Image.asset('assets/icons/icon_kl.png',height: 30,width: 20,fit: BoxFit.scaleDown,),
                                     const SizedBox(width: 10,),
                                     const Text('Escreva o iktoken',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:16,color: Colors.black),),
-
-
                                   ],
                                 )
                             ),

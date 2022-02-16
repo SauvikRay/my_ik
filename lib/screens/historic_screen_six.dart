@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 class HistoricPageSix extends StatefulWidget {
   const HistoricPageSix({Key? key}) : super(key: key);
@@ -10,211 +11,212 @@ class HistoricPageSix extends StatefulWidget {
 class _HistoricPageSixState extends State<HistoricPageSix> {
   @override
   Widget build(BuildContext context) {
+        final head1 = Theme.of(context).textTheme.headline1; // Bold 18
+        final head2 = Theme.of(context).textTheme.headline2; //Normal 18
+        final head3 = Theme.of(context).textTheme.headline3;//Bold 16
+        final head4 = Theme.of(context).textTheme.headline4; // 16, normal
+        final head5 = Theme.of(context).textTheme.headline5; // 14, normal
+        final body1 = Theme.of(context).textTheme.bodyText1; //20,Bold
+        final body2 = Theme.of(context).textTheme.bodyText2; //16,normal, ash
+        final sub1 = Theme.of(context).textTheme.subtitle1; //12,bold,
+        final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
+
     return SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
             appBar: AppBar(
-              titleTextStyle:const TextStyle(fontFamily: 'Poppins', fontSize: 24, fontWeight: FontWeight.bold,color: Colors.black),
-              centerTitle: true,
-              elevation: 0,
-              backgroundColor: Colors.transparent,
-              iconTheme:const IconThemeData(color: Colors.purpleAccent,),
-              leading: IconButton(splashRadius: 20, onPressed: (){Navigator.pop(context);} ,icon:SvgPicture.asset('assets/icons/arrow_back.svg')),
+              leading: IconButton(splashRadius: 20.r, onPressed: (){Navigator.pop(context);} ,icon:SvgPicture.asset('assets/icons/arrow_back.svg')),
             ),
           body: Container(
             alignment: Alignment.bottomCenter,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            height: double.infinity,
+            width:  double.infinity,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-              height: MediaQuery.of(context).size.height/1.3,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
+              padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
+              height: 0.8.sh,
+              width:double.infinity,
+              decoration:  BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    topRight: Radius.circular(20.0),
+                    topLeft: Radius.circular(20.r),
+                    topRight: Radius.circular(20.r),
                   ),
                   color: Colors.white),
               alignment: Alignment.bottomCenter,
               //TODO: white Container,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                 child: Column(
-                   mainAxisAlignment: MainAxisAlignment.start,
-                   children:<Widget> [
-                     //Cross Button
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.end,
-                       children: [
-                         Container(
-                           width: 36,
-                           height: 36,
-                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),border: Border.all(width: 2,color: Colors.black),),
-                           child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',height: 20,width: 20,),iconSize: 30,),
-                         ),
-                       ],
-                     ),
-                     const Text('Preço das classes e serviços',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
-                     const Text('Classes de veículos',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:16,color: Colors.black26),),
-                     const Divider(thickness: 1,color: Colors.black26,),
-                     Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
-                       elevation: 5.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children:<Widget> [
+                  //Cross Button
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 36.w,
+                        height: 36.w,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),border: Border.all(width: 2,color: Colors.black),),
+                        child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',),iconSize: 30.w,),
+                      ),
+                    ],
+                  ),
+                  Text('Preço das classes e serviços',style:body1?.copyWith(color: Colors.black),),
+                  Text('Classes de veículos',style:head4?.copyWith(color: Colors.black26),),
+                  const Divider(thickness: 1,color: Colors.black26,),
+                 SizedBox(height: 10.h,),
+                  Flexible(
+                    child: ListView(
+                      children:<Widget> [
+                         Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r),),
+                    elevation: 5.0,
 
-                       child: Container(
-                         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                         child: Column(
-                           children: [
-                             Row(
-                               children:<Widget> [
-                                 SvgPicture.asset('assets/icons/car_icon.svg',height: 30,width: 30,fit: BoxFit.scaleDown,),
-                                 const SizedBox(width: 10,),
-                                 const Expanded(child: Text('Classe 1',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.black),),),
-                                 const Text('55 €',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.purpleAccent),),
-                               ],),
-                             Row(
-                               children:const <Widget> [
-                                 SizedBox(width: 40,),
-                                 Expanded(child: Text('25€/hora + 15%',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.purpleAccent),),),
-                                 Text('/hora',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 14,color: Colors.black26),),
-                             ],),
-                             const Divider(thickness: 1,color: Colors.black26,),
-                             Row(
-                               children: <Widget>[
-                                 Expanded(
-                                   child: Column(
-                                     children:const <Widget> [
-                                       Text('Altura max.',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 12,color: Colors.black),),
-                                       Text('1.6 m',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
-                                     ],
-                                   ),
-                                 ),
-                                 const VerticalDivider(
-                                   width: 20,
-                                   thickness: 1,
-                                   indent: 20,
-                                   endIndent: 0,
-                                   color: Colors.grey,
-                                 ),
-                                 Expanded(
-                                   child: Column(
-                                     children:const <Widget> [
-                                       Text('Comprimento max.',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 12,color: Colors.black),),
-                                       Text('2.4 m',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
-                                     ],
-                                   ),
-                                 ),
-                               ],
-                             ),
-                           ],
-                         ),
-                       ),
+                    child: Container(
+                      padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                      child: Column(
+                        children: [
+                          Row(
+                            children:<Widget> [
+                              SvgPicture.asset('assets/icons/car_icon.svg',height: 30.w,width: 30.w,fit: BoxFit.scaleDown,),
+                              SizedBox(width: 10.w,),
+                              Expanded(child: Text('Classe 1',style: head1?.copyWith(color: Colors.black),),),
+                               Text('55 €',style:head1?.copyWith(color: Colors.purpleAccent),),
+                            ],),
+                          Row(
+                            children: <Widget> [
+                              SizedBox(width: 40.w,),
+                              Expanded(child: Text('25€/hora + 15%',style: head1?.copyWith(color: Colors.purpleAccent),),),
+                              Text('/hora',style: head5?.copyWith(color: Colors.black26),),
+                          ],),
+                          const Divider(thickness: 1,color: Colors.black26,),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  children: <Widget> [
+                                    Text('Altura max.',style:sub2?.copyWith(color: Colors.black),),
+                                    Text('1.6 m',style:body2?.copyWith(color: Colors.black),),
+                                  ],
+                                ),
+                              ),
+                               VerticalDivider(
+                                width: 20.w,
+                                thickness: 1,
+                                indent: 20,
+                                endIndent: 0,
+                                color: Colors.grey,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: <Widget> [
+                                    Text('Comprimento max.',style: sub2?.copyWith(color: Colors.black),),
+                                    Text('2.4 m',style:body2?.copyWith(color: Colors.black),),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
 
-                     ),
-                     const SizedBox(height: 10.0,),
-                     Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
-                       elevation: 5.0,
+                  ),   
+                        SizedBox(height: 10.h,),
+                         Card(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r),),
+                           elevation: 5.0,
 
-                       child: Container(
-                         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                         child: Column(
-                           children: [
-                             Row(
-                               children:<Widget> [
-                                 SvgPicture.asset('assets/icons/car_icon.svg',height: 30,width: 30,fit: BoxFit.scaleDown,),
-                                 const SizedBox(width: 10,),
-                                 const Expanded(child: Text('Classe 1',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.black),),),
-                                 const Text('55 €',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.purpleAccent),),
-                               ],),
-                             Row(
-                               children:const <Widget> [
-                                 SizedBox(width: 40,),
-                                 Expanded(child: Text('25€/hora + 15%',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 20,color: Colors.purpleAccent),),),
-                                 Text('/hora',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 14,color: Colors.black26),),
-                               ],),
-                             const Divider(thickness: 1,color: Colors.black26,),
-                             Row(
-                               children: <Widget>[
-                                 Expanded(
-                                   child: Column(
-                                     children:const <Widget> [
-                                       Text('Altura max.',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 12,color: Colors.black),),
-                                       Text('1.6 m',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
-                                     ],
-                                   ),
-                                 ),
-                                 const VerticalDivider(
-                                   width: 20,
-                                   thickness: 1,
-                                   indent: 20,
-                                   endIndent: 0,
-                                   color: Colors.grey,
-                                 ),
-                                 Expanded(
-                                   child: Column(
-                                     children:const <Widget> [
-                                       Text('Comprimento max.',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Poppins',fontSize: 12,color: Colors.black),),
-                                       Text('2.4 m',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 16,color: Colors.black),),
-                                     ],
-                                   ),
-                                 ),
-                               ],
-                             ),
-                           ],
-                         ),
-                       ),
+                    child: Container(
+                      padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                      child: Column(
+                        children: [
+                          Row(
+                            children:<Widget> [
+                              SvgPicture.asset('assets/icons/car_icon.svg',height: 30.w,width: 30.w,fit: BoxFit.scaleDown,),
+                              SizedBox(width: 10.w,),
+                              Expanded(child: Text('Classe 1',style: head1?.copyWith(color: Colors.black),),),
+                               Text('55 €',style:head1?.copyWith(color: Colors.purpleAccent),),
+                            ],),
+                          Row(
+                            children: <Widget> [
+                              SizedBox(width: 40.w,),
+                              Expanded(child: Text('25€/hora + 15%',style: head1?.copyWith(color: Colors.purpleAccent),),),
+                              Text('/hora',style: head5?.copyWith(color: Colors.black26),),
+                          ],),
+                          const Divider(thickness: 1,color: Colors.black26,),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  children: <Widget> [
+                                    Text('Altura max.',style:sub2?.copyWith(color: Colors.black),),
+                                    Text('1.6 m',style:body2?.copyWith(color: Colors.black),),
+                                  ],
+                                ),
+                              ),
+                               VerticalDivider(
+                                width: 20.w,
+                                thickness: 1,
+                                indent: 20,
+                                endIndent: 0,
+                                color: Colors.grey,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: <Widget> [
+                                    Text('Comprimento max.',style: sub2?.copyWith(color: Colors.black),),
+                                    Text('2.4 m',style:body2?.copyWith(color: Colors.black),),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
 
-                     ),
-                     const SizedBox(height: 20.0,),
-                     const Text('Preço das classes e serviços',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
-                     const Text('Classes de veículos',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:16,color: Colors.black26),),
-                     const SizedBox(height: 15.0,),
-                     Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
-                       elevation: 5.0,
+                  ),
+                 
+                  SizedBox(height: 20.h,),
+                  Text('Preço das classes e serviços',textAlign: TextAlign.center,style:body1?.copyWith(color: Colors.black),),
+                   Text('Classes de veículos',textAlign: TextAlign.center,style:body2?.copyWith(color: Colors.black26),),
+                  SizedBox(height: 15.h,),
+                  Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
+                    elevation: 5.0,
+                    child: Container(
+                      padding:  EdgeInsets.symmetric(horizontal: 5.w,vertical: 15.h),
+                      child: Row(
+                        children: <Widget> [
+                          SizedBox(width: 10.w,),
+                          Expanded(child: Text('Montagem e desmontagem',style:body1?.copyWith(color: Colors.black),),),
+                          Text('25 €',style:body1?.copyWith(color: Colors.purpleAccent),),
+                        ],),
+                    ),
 
-                       child: Container(
-                         padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 15),
-                         child: Row(
-                           children:const <Widget> [
+                  ),
+                  SizedBox(height: 10.h,),
+                   Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
+                    elevation: 5.0,
+                    child: Container(
+                      padding:  EdgeInsets.symmetric(horizontal: 5.w,vertical: 15.h),
+                      child: Row(
+                        children: <Widget> [
+                          SizedBox(width: 10.w,),
+                          Expanded(child: Text('Rolo de filme com 450metros',style:body1?.copyWith(color: Colors.black),),),
+                          Text('11 €',style:body1?.copyWith(color: Colors.purpleAccent),),
+                        ],),
+                    ),
 
-                             SizedBox(width: 10,),
-                             Expanded(child: Text('Montagem e desmontagem',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 18,color: Colors.black),),),
-                             Text('25 €',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 18,color: Colors.purpleAccent),),
-                           ],),
-                       ),
-
-                     ),
-                     const SizedBox(height: 10.0,),
-                     Card(
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
-                       elevation: 5.0,
-
-                       child: Container(
-                         padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 15),
-                         child: Row(
-                           children:const <Widget> [
-
-                             SizedBox(width: 10,),
-                             Expanded(child: Text('Rolo de filme com 450metros',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 18,color: Colors.black),),),
-                             Text('11 €',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Poppins',fontSize: 18,color: Colors.purpleAccent),),
-                           ],),
-                       ),
-
-                     ),
+                  ),
 
 
-                   ],
-                 ),
+                      ],
+                    ),
+                    ),
+                ],
               ),
-
-
             ),
           ),
-
-
-
     ),);
   }
 }

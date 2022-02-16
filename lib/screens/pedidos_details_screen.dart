@@ -5,6 +5,8 @@ import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/helpers/navigation_service.dart';
 import 'package:my_ik/widget/app_bar_widget.dart';
 
+import '../widget/material_button.dart';
+
 class PedidosScreen extends StatefulWidget {
   const PedidosScreen({Key? key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class PedidosScreen extends StatefulWidget {
 class _PedidosScreenState extends State<PedidosScreen> {
   @override
   Widget build(BuildContext context) {
-//Bold 16 purple
+    double height = MediaQuery.of(context).size.height;
      final head1 = Theme.of(context).textTheme.headline1; // 16, normal, black
      final head3 = Theme.of(context).textTheme.headline3; // 16, normal, black
      final head4 = Theme.of(context).textTheme.headline4; // 16, normal, black
@@ -47,7 +49,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
           actions: <Widget>[
             Padding(
               padding: EdgeInsets.all(10.w),
-              child: Text('Chat', style: head1),
+              child: Text('Chat', style: head1?.copyWith(color: Colors.black)),
             ),
             Padding(
               padding: EdgeInsets.only(right: 10.0.w),
@@ -72,7 +74,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                 Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                  height: 0.7.sh,
+                  height: (height<600) ? 0.95.sh :0.7.sh,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
@@ -112,7 +114,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                               ),
                               Text(
                                 'PENDENTE',
-                                style: head6,
+                                style:head6?.copyWith(color: AppColors.highLightText),
                               ),
                             ],
                           )
@@ -258,14 +260,14 @@ class _PedidosScreenState extends State<PedidosScreen> {
                           Flexible(
                             child: Text(
                               'Total',
-                              style: head6,
+                              style: head6?.copyWith(color: AppColors.highLightText),
                             ),
                           ),
                           Flexible(
                             flex: 3,
                             child: Text(
                               '55 € / hora',
-                              style: head1,
+                              style:  head6?.copyWith(color: AppColors.highLightText),
                             ),
                           )
                         ],
@@ -343,7 +345,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                       ),
                        Text(
                         'Adicional',
-                        style:head6 ,
+                        style: head6?.copyWith(color: AppColors.highLightText) ,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -457,7 +459,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                       onPressed: () {},
                       child:  Text(
                         'Eliminar',
-                        style: head3,
+                        style:  head3?.copyWith(color: AppColors.highLightText),
                       ),
                     ),
                   ],
@@ -465,19 +467,25 @@ class _PedidosScreenState extends State<PedidosScreen> {
                  SizedBox(
                   height: 20.h,
                 ),
-                MaterialButton(
-                  onPressed: () {},
-                  child:  Text(
-                    'Adicionar Serviço',
-                    style: Theme.of(context).textTheme.button,
+                // MaterialButton(
+                //   onPressed: () {},
+                //   child:  Text(
+                //     'Adicionar Serviço',
+                //     style: Theme.of(context).textTheme.button,
+                //   ),
+                //   height: 60.0,
+                //   minWidth: double.infinity,
+                //   shape: RoundedRectangleBorder(
+                //     borderRadius: BorderRadius.circular(50),
+                //   ),
+                //   color: AppColors.buttonColor,
+                // ),
+
+                customeButton(
+                  context: context,
+                  name: 'Adicionar Serviço',
+                  onCallBack: (){},
                   ),
-                  height: 60.0,
-                  minWidth: double.infinity,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  color: AppColors.buttonColor,
-                ),
                  SizedBox(
                   height: 30.h,
                 ),

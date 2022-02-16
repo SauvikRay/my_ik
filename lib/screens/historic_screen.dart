@@ -15,6 +15,7 @@ class HistoryScreen extends StatefulWidget {
 class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     final head4 = Theme.of(context).textTheme.headline4; // 16, normal, black
     return SafeArea(
         child: Scaffold(
@@ -23,103 +24,83 @@ class _HistoryScreenState extends State<HistoryScreen> {
           body:Container(
             height: double.infinity,
             width: double.infinity,
-            child:
-            Stack(
-              children:<Widget>[
-                Column(
-                  children:[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          height: 80.h,
-                          width: 200.h,
-                          decoration:   BoxDecoration(
-                            borderRadius:  BorderRadius.only(topRight: Radius.circular(20.r),bottomRight: Radius.circular(20)),
-                            gradient: const LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.topRight,
-                              colors: [
-                                Color(0xFFE305B7),
-                                Color(0xFF7B61FF),
-                              ],),
-                            boxShadow: [BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 5.r,
-                              blurRadius: 7.r,
-                              offset: const Offset(0, 3),
-                            ),],
-                          ),
-                          //total service
-                          child: Align(alignment: Alignment.center,
-                            child: Container(
-                              padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 5.h),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children:<Widget>[
-                                  const Text('Total de Serviços',style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal,color: Colors.white),),
-                                  Row(
-                                    children:<Widget> [
-                                      SvgPicture.asset('assets/icons/truck_icon.svg'),
-                                      SizedBox(width: 20.w,),
-                                      const Text('124',style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold,color: Colors.white),),
-
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        //total investo
-                        Container(
-                          height: 80.h,
-                          padding:  EdgeInsets.only(right: 20.w),
+            child:Column(
+              children:[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 90.h,
+                      width: 200.h,
+                      decoration:   BoxDecoration(
+                        borderRadius:  BorderRadius.only(topRight: Radius.circular(20.r),bottomRight: Radius.circular(20)),
+                        gradient: const LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                          colors: [
+                            Color(0xFFE305B7),
+                            Color(0xFF7B61FF),
+                          ],),
+                        boxShadow: [BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5.r,
+                          blurRadius: 7.r,
+                          offset: const Offset(0, 3),
+                        ),],
+                      ),
+                      //total service
+                      child: Align(alignment: Alignment.center,
+                        child: Container(
+                          padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 5.h),
                           child: Column(
-                            children:  <Widget> [
-                              Text('Total Investido',style: head4),
-                              Text('1135.85 €',style: TextStyle( fontSize: 24.sp, fontWeight: FontWeight.bold,color: Colors.black),),
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:<Widget>[
+                              const Text('Total de Serviços',style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal,color: Colors.white),),
+                              Row(
+                                children:<Widget> [
+                                  SvgPicture.asset('assets/icons/truck_icon.svg'),
+                                  SizedBox(width: 20.w,),
+                                  const Text('124',style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold,color: Colors.white),),
+
+                                ],
+                              )
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    SizedBox(height: 20.h,),
-                    Container(
-                      height: 400.h,
-                      child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: 4,
-                          itemBuilder: (BuildContext context, int index){
-                            return const HistoryWidget();
-                          }
-
                       ),
                     ),
-
-
-
-
-
+                    //total investo
+                    Container(
+                      height: 80.h,
+                      padding:  EdgeInsets.only(right: 20.w),
+                      child: Column(
+                        children:  <Widget> [
+                          Text('Total Investido',style: head4),
+                          Text('1135.85 €',style: TextStyle( fontSize: 24.sp, fontWeight: FontWeight.bold,color: Colors.black),),
+                        ],
+                      ),
+                    ),
                   ],
-
-
                 ),
+                SizedBox(height: 20.h,),
+                SizedBox(
+                 height: (height<600) ? 300.h : 400.h,
+                  width: double.infinity,
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: 4,
+                      itemBuilder: (BuildContext context, int index){
+                        return const HistoryWidget();
+                      }
 
-                Positioned(
-                  bottom: 30.h,
-                  child: Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 20.w),
-                    child: BottomNavigationWidget(),
                   ),
                 ),
-
               ],
-
             ),
             
           ),
-         
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+          floatingActionButton: BottomNavigationWidget(),
         )
     );
   }

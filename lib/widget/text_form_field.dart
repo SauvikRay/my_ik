@@ -140,7 +140,7 @@ class _TextInputFormState extends State<TextInputForm> {
             borderRadius:BorderRadius.circular(30.r)),
         child: Container(
           margin:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
-          height: 350.h,
+          height: 360.h,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -189,18 +189,27 @@ class _TextInputFormState extends State<TextInputForm> {
               ),
               const Divider(color: Colors.black26,thickness: 1.0,),
               SizedBox(height: 15.h,),
-              MaterialButton(
-                onPressed: (){
-                  Navigator.pop(context);
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context)=>const HomeScreenOne()), );
 
-                },
-                child: Text('Registar',style:Theme.of(context).textTheme.button,),
-                height: 50.h,
-                minWidth: double.infinity,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r),),
-                color:AppColors.buttonColor,
-              ),
+
+              customeButton(
+          context: context,
+          name: 'Registar',
+          onCallBack: () {},
+        ),
+              // MaterialButton(
+              //   onPressed: (){
+              //     Navigator.pop(context);
+              //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context)=>const HomeScreenOne()), );
+
+              //   },
+              //   child: Text('Registar',style:Theme.of(context).textTheme.button,),
+              //   height: 50.h,
+              //   minWidth: double.infinity,
+              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r),),
+              //   color:AppColors.buttonColor,
+              // ),
+
+
 
             ],
           ),

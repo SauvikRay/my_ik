@@ -23,34 +23,37 @@ class _ContactScreenState extends State<ContactScreen> {
   ];
   
   @override
-  Widget build(BuildContext context) {
-     final head2 = Theme.of(context).textTheme.headline2; //Normal 18
-    final head4 = Theme.of(context).textTheme.headline4; // 16, normal
-     
+  Widget build(BuildContext context) { 
+    double height = MediaQuery.of(context).size.height;
+   
     return SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
           appBar: const MainAppBarWidget(text: 'Contacte-nos',),
-          body: Column(
-            children: [
-              ListView.builder(
-                scrollDirection: Axis.vertical,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: contactItems.length,
-                shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children:<Widget> [
-                      ContactPageWidget( sText: contactItems[index].smallText,gradient: true,bText: contactItems[index].bigText,bIcon: contactItems[index].contactIcon,),
-                      SizedBox(height: 20.h,),
-                    ],
-                  );
-                },
-              ),
-              // SizedBox(height: 10.h,),
-               ContactPageWidget(sText: 'Localização',contColor: AppColors.highLightText,gradient: false,conHeight: 120.h,bIcon: 'location_icon.svg',aText:'Av. Manuel Violas 476 4410-137 São Félix da Marinha Portugal' ,),
-
-            ],
+          body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: contactItems.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children:<Widget> [
+                        ContactPageWidget( sText: contactItems[index].smallText,gradient: true,bText: contactItems[index].bigText,bIcon: contactItems[index].contactIcon,),
+                        SizedBox(height: 20.h,),
+                      ],
+                    );
+                  },
+                ),
+                // SizedBox(height: 10.h,),
+                 ContactPageWidget(sText: 'Localização',contColor: AppColors.highLightText,gradient: false,conHeight: 120.h,bIcon: 'location_icon.svg',aText:'Av. Manuel Violas 476 4410-137 São Félix da Marinha Portugal' ,),
+                if(height<600) SizedBox(height: 80.h,),
+          
+              ],
+            ),
           ),
           //bottomNavigationBar: BottomNavigationWidget(),
           floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,

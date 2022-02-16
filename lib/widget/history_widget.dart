@@ -16,7 +16,8 @@ class _HistoryWidgetState extends State<HistoryWidget> {
     return Column(
       children:<Widget>[
       Container(
-      height: 150.h,
+      height: 160.h,
+      width: double.infinity,
       margin:  EdgeInsets.symmetric(horizontal: 20.w),
       padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
       decoration:BoxDecoration(
@@ -48,7 +49,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
               SvgPicture.asset('assets/icons/money_euro_circle_icon.svg',height: 32.h,width: 32.w,fit: BoxFit.scaleDown,),
             Text('197.93 €',style:body1,),
             Text('2021-08-02 | 15:53',style:head4),
-            IconButton(onPressed: (){},icon:const Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purpleAccent,),),
+            Expanded(child: IconButton(onPressed: (){},icon:const Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purpleAccent,),)),
 
             ],
           ),

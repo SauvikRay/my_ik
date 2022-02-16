@@ -34,6 +34,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
   @override
   Widget build(BuildContext context) {
+
+    
+        final head5 = Theme.of(context).textTheme.headline5; // 14, normal
+      
     return SafeArea(
         child: Scaffold(
           body:SizedBox(
@@ -78,7 +82,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                             SvgPicture.asset('assets/icons/rectangle_icon.svg'),
                             const SizedBox(height: 10,),
 
-                            const Text('ESCHOLA O TIPO DE SERVIÇO',textAlign:TextAlign.center,style: TextStyle(letterSpacing: 2.0,fontSize: 14.0,color: Colors.black,fontFamily: 'Poppins'),),
+                            Text('ESCHOLA O TIPO DE SERVIÇO',textAlign:TextAlign.center,style: head5?.copyWith(color: Colors.black,letterSpacing: 2),),
                             const SizedBox(height: 20,),
                             Expanded(
                                 child: ListView.builder(

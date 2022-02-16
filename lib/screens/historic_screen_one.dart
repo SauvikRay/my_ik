@@ -14,6 +14,7 @@ class HistoricPageOne extends StatefulWidget {
 class _HistoricPageOneState extends State<HistoricPageOne> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     final body1 = Theme.of(context).textTheme.bodyText1;
     final head4 = Theme.of(context).textTheme.headline4;
     final head6 = Theme.of(context).textTheme.headline6;
@@ -28,7 +29,7 @@ class _HistoricPageOneState extends State<HistoricPageOne> {
           body:Align(
          alignment: Alignment.bottomCenter,
          child:Container(
-           padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h ),
+           padding:  EdgeInsets.symmetric(horizontal:(height<600)? 10.w : 20.w,vertical: 20.w ),
                height:0.8.sh,
                width: double.infinity,
                     decoration:  BoxDecoration(
@@ -44,10 +45,10 @@ class _HistoricPageOneState extends State<HistoricPageOne> {
                      mainAxisAlignment: MainAxisAlignment.end,
                      children: [
                        Container(
-                         width: 36,
-                         height: 36,
-                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),border: Border.all(width: 2,color: Colors.black),),
-                         child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',height: 20,width: 20,),iconSize: 30,),
+                         width: 36.w,
+                         height: 36.w,
+                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),border: Border.all(width: 2,color: Colors.black),),
+                         child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',),iconSize: 30.w,),
 
 
                        ),

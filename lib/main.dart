@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         },
 
 
-      initialRoute: Routes.historyTwo,
+      initialRoute: Routes.register,
       navigatorKey: NavigationService.navigatorKey,
       onGenerateRoute: RouteGenerator.generateRoute,
 

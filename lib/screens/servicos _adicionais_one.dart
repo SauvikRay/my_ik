@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_ik/constants/app_color.dart';
+
+import '../widget/material_button.dart';
 class ServiceAdicionaisScreenOne extends StatefulWidget {
   const ServiceAdicionaisScreenOne({Key? key}) : super(key: key);
 
@@ -10,99 +14,108 @@ class ServiceAdicionaisScreenOne extends StatefulWidget {
 class _ServiceAdicionaisScreenOneState extends State<ServiceAdicionaisScreenOne> {
   @override
   Widget build(BuildContext context) {
+    final body1 = Theme.of(context).textTheme.bodyText1; //20,bold
+    final head4 = Theme.of(context).textTheme.headline4; // 16, normal
+    final head5 = Theme.of(context).textTheme.headline5; // 14, normal
+    final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
 
     return  SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
           appBar: AppBar(
-            titleTextStyle:const TextStyle(fontFamily: 'Poppins', fontSize: 24, fontWeight: FontWeight.bold,color: Colors.black),
-            centerTitle: true,
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            iconTheme:const IconThemeData(color: Colors.purpleAccent,),
-            leading: IconButton(splashRadius: 20, onPressed: (){Navigator.pop(context);} ,icon:SvgPicture.asset('assets/icons/arrow_back.svg')),
-          ),
-          body:Align(
-         alignment: Alignment.bottomCenter,
-         child:Container(
-           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20 ),
-               height: MediaQuery.of(context).size.height*0.8,
-               width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20.0),
-                          topRight: Radius.circular(20.0),
-                        ),
-                        color: Colors.white),
-            child: Stack(
-              children:<Widget> [
-                   Column(
-                     children:<Widget> [
-                       //Cross Button
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.end,
-                         children: [
-                           Container(
-                             width: 36,
-                             height: 36,
-                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),border: Border.all(width: 2,color: Colors.black),),
-                             child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',height: 20,width: 20,),iconSize: 30,),
-                           ),
-                         ],
-                       ),
-                       const Text('Serviços Adicionais',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
-                       const Text('Informe os serviços adicionais',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:16,color: Colors.black26),),
-                       const SizedBox(height: 20,),
+          leading: IconButton(splashRadius: 20,onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: SvgPicture.asset('assets/icons/arrow_back.svg')),
+        ),
+        body: Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+           padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.w ),
+           height:0.8.sh,
+           width: double.infinity,
+           decoration:  BoxDecoration(
+               borderRadius: BorderRadius.only(
+                 topLeft: Radius.circular(20.r),
+                 topRight: Radius.circular(20.r),
+               ),
+               color: Colors.white),
+            child: Column(
+              children: <Widget>[
+                //Cross Button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+             Container(
+               width: 36.w,
+               height: 36.w,
+               decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),border: Border.all(width: 2,color: Colors.black),),
+               child: IconButton(onPressed: (){},icon: SvgPicture.asset('assets/icons/cross_icon.svg',),iconSize: 30.w,),
+
+             ),
+                ],
+              ),
+                 Text(
+                  'Serviços Adicionais',
+                  style: body1?.copyWith(color: Colors.black),
+                ),
+                Text(
+                  'Informe os serviços adicionais',
+                  style:head4?.copyWith(color: Colors.black26),
+                ),
+              
+                 SizedBox(
+                  height: 10.h,
+                ),
+            
                        //Item Box
                        Flexible(
                          child: ListView(
                            children:<Widget> [
                              Container(
-                                 padding: const EdgeInsets.symmetric(vertical: 5),
-                                 decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.0),color: const Color(0xFFF1F2F7)),
-                                 height: 60,
+                                 padding: EdgeInsets.symmetric(vertical: 5.w),
+                                 decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.r),color:AppColors.shadowText),
+                                 height: 60.h,
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.start,
                                    children:<Widget>[
                                      Row(
                                        children:<Widget> [
-                                       TextButton( child: const Text('Nenhum serviço adicional',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:15,color: Colors.black),),
+                                       TextButton( child: Text('Nenhum serviço adicional',style:head5?.copyWith(color: Colors.black)),
                                          onPressed: (){
                                          },),
                                        //const Icon(Icons.keyboard_arrow_down_rounded,color: Colors.purpleAccent,size: 25,),
                                          PopupMenuButton(
-                                           icon:const Icon(Icons.keyboard_arrow_down_rounded,color: Colors.purpleAccent,),
-                                             iconSize: 20.0,
+                                           icon: const Icon(Icons.keyboard_arrow_down_rounded,color: AppColors.highLightText,),
+                                             iconSize: 20.w,
                                              itemBuilder: (BuildContext context){
                                                return [
-                                                 const PopupMenuItem(
-                                                   child: Text('Nenhum serviço adicional'),
+                                                  PopupMenuItem(
+                                                   child: Text('Nenhum serviço adicional',style: head5?.copyWith(color: Colors.black),),
                                                  ),
-                                                 const PopupMenuItem(
-                                                   child: Text('Montagem e desmontagem - 25€'),
+                                                  PopupMenuItem(
+                                                   child: Text('Montagem e desmontagem - 25€',style: head5?.copyWith(color: Colors.black),),
                                                  ),
-                                                 const PopupMenuItem(
-                                                   child: Text('Rolo de filme com 450 metros - 11€'),
+                                                  PopupMenuItem(
+                                                   child: Text('Rolo de filme com 450 metros - 11€',style: head5?.copyWith(color: Colors.black),),
                                                  ),
-                                                 const PopupMenuItem(
-                                                   child: Text('Caixas (cada) - 3.30€'),
+                                                  PopupMenuItem(
+                                                   child: Text('Caixas (cada) - 3.30€',style: head5?.copyWith(color: Colors.black),),
                                                  ),
-                                                 const PopupMenuItem(
-                                                   child: Text('Rolo de papel cartão - 56€'),
+                                                  PopupMenuItem(
+                                                   child: Text('Rolo de papel cartão - 56€',style: head5?.copyWith(color: Colors.black),),
                                                  ),
-                                                 const PopupMenuItem(
-                                                   child: Text('Elevador Extern o - 185€'),
+                                                  PopupMenuItem(
+                                                   child: Text('Elevador Extern o - 185€',style: head5?.copyWith(color: Colors.black),),
                                                  ),
                        
                                                ];
                                              }
                                          )
                                      ],),
-                                     Row(children:const <Widget> [
-                                       Text('Qtd.',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:10,color: Colors.black),),
-                                       Icon(Icons.keyboard_arrow_down_rounded,color: Colors.purpleAccent,size: 20,),
-                                     ],),
-                                     IconButton(onPressed: (){}, icon:const Icon(Icons.add_box,color: Colors.purpleAccent,),iconSize: 20,),
+                                     Text('Qtd.',style:sub2?.copyWith(color: Colors.black),),
+                                     Icon(Icons.keyboard_arrow_down_rounded,color: Colors.purpleAccent,size: 20.w,),
+                                     Expanded(flex:2, child: IconButton(onPressed: (){}, icon:const Icon(Icons.add_box,color: Colors.purpleAccent,),iconSize: 20.w,)),
                        
                                    ],
                                  )
@@ -111,20 +124,17 @@ class _ServiceAdicionaisScreenOneState extends State<ServiceAdicionaisScreenOne>
                            ],
                          ),
                        ),
-                       MaterialButton(
-                         onPressed: (){
-                         },
-                         child:const Text('Aplicar',style: TextStyle(fontFamily:'Poppins',fontSize: 18.0,fontWeight: FontWeight.bold,color: Colors.white ),),
-                         height: 60.0,
-                         minWidth: double.infinity,
-                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50),),
-                         color:const Color(0xFF6B34BE),
-                       ),
+                       customeButton(
+                     context: context,
+                     name: 'Próximo',
+                     onCallBack: () {
+
+                     }),
+                    SizedBox(height: 10.h,),
 
                      ],
                    ),
 
-              ],
             ),
          ),
         ),
@@ -132,6 +142,6 @@ class _ServiceAdicionaisScreenOneState extends State<ServiceAdicionaisScreenOne>
 
 
 
-        ));
+        );
   }
 }
