@@ -52,8 +52,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   height: MediaQuery.of(context).size.height,
                   width:  MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
                      const Color(0xFFFF3CBE).withOpacity(0.8),
                      const Color(0xFFE305B7).withOpacity(0.8),
