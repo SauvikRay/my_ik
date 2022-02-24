@@ -20,7 +20,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     return SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
-          appBar:const MainAppBarWidget(text: 'Histórico',),
+          appBar: MainAppBarWidget(text: 'Histórico',),
           body:Container(
             height: double.infinity,
             width: double.infinity,
@@ -100,7 +100,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-          floatingActionButton: BottomNavigationWidget(),
+         // floatingActionButton: BottomNavigationWidget(),
         )
     );
   }

@@ -28,8 +28,8 @@ class _PerfilScreenState extends State<PerfilScreen> {
      //14,normal, purple
     return SafeArea(
       child: Scaffold(
-        backgroundColor:const Color(0xFFE5E5E5),
-        appBar:const MainAppBarWidget(text: "Perfil"),
+        // backgroundColor:const Color(0xFFE5E5E5),
+        appBar: MainAppBarWidget(text: "Perfil"),
         body:Container(
           height: double.infinity,
           width: double.infinity,
@@ -140,7 +140,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-        floatingActionButton: BottomNavigationWidget(),
+        //floatingActionButton: BottomNavigationWidget(),
       ),
     );
   }

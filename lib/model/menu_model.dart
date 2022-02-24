@@ -1,7 +1,9 @@
 
+import 'package:flutter/widgets.dart';
+
 class MenuItem{
   final String menuIcon;
   final String menuText;
-  final String path;
-  MenuItem({required this.menuIcon,required this.menuText,required this.path});
+  final Widget widget;
+  MenuItem({required this.menuIcon,required this.menuText,required this.widget});
 }

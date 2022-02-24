@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_ik/screens/navigation_screens.dart';
 import '/screens/contact_screen.dart';
 import '/screens/historic_screen.dart';
 import '/screens/historic_screen_five.dart';
@@ -55,6 +56,7 @@ class Routes{
   static const String menu='/menu';
   static const String notification='/notification';
   static const String terms='/terms';
+  static const String navigation='/navigation';
   
 }
 
@@ -170,6 +172,10 @@ class RouteGenerator{
           return Platform.isAndroid 
           ? MaterialPageRoute(builder: (context)=> const TermsConditionScreen())
           : CupertinoPageRoute(builder: (context)=> const TermsConditionScreen());
+      case Routes.navigation:
+          return Platform.isAndroid 
+          ? MaterialPageRoute(builder: (context)=>  NavigationScreen())
+          : CupertinoPageRoute(builder: (context)=> NavigationScreen());
           
 
 

@@ -10,7 +10,7 @@ class CustomTheme {
   static ThemeData get mainTheme {
     return ThemeData(
       primaryColor:const Color(0xFFEA12B9) ,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: const Color(0xFFF4F5FB),
       fontFamily: 'Poppins',
       textTheme: 
          TextTheme(

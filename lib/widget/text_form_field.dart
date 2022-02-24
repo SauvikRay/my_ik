@@ -154,7 +154,7 @@ class _TextInputFormState extends State<TextInputForm> {
               Container(
                 padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
                 height: 100.h,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r),color: Colors.purpleAccent),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r),color:AppColors.highLightText),
                 child: Text('Clique aqui para ver os temos e condições de politicas de privacidade',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.normal,color: Colors.white ),) ,
               ),
               SizedBox(height: 10.h,),

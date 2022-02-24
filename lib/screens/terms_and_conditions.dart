@@ -13,7 +13,7 @@ class TermsConditionScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
-          appBar:const MainAppBarWidget(text: 'Terms and Conditions'),
+          appBar: MainAppBarWidget(text: 'Terms and Conditions'),
           body: Container(
             height: double.infinity,
             width: double.infinity,
@@ -38,7 +38,7 @@ class TermsConditionScreen extends StatelessWidget {
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-          floatingActionButton:  BottomNavigationWidget(),
+          //floatingActionButton:  BottomNavigationWidget(),
         ),
     );
   }

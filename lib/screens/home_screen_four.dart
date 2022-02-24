@@ -10,6 +10,7 @@ import 'package:my_ik/screens/pedidos_details_screen.dart';
 import 'package:my_ik/screens/perfil_screen.dart';
 import 'package:my_ik/screens/splash_screen.dart';
 import 'package:my_ik/widget/expanded_card_widget.dart';
+import 'package:my_ik/widget/material_button.dart';
 import '/widget/google%20_map_widget.dart';
 
 
@@ -30,6 +31,8 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
 
   @override
   Widget build(BuildContext context) {
+    final head4 = Theme.of(context).textTheme.headline4; // 16, normal
+    final head5 = Theme.of(context).textTheme.headline5; // 16, normal
     return SafeArea(
         child: Scaffold(
           body:SizedBox(
@@ -39,11 +42,11 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
               alignment: Alignment.center,
               children:<Widget>[
                GoogleMapWidget(),
-              Positioned(
-                  bottom: 30.h,
-                  //This Section is for Navigation Bar
-                  child: BottomNavigationWidget(),
-                ),
+              // Positioned(
+              //     bottom: 30.h,
+              //     //This Section is for Navigation Bar
+              //     child: BottomNavigationWidget(),
+              //   ),
 
                 //For Overlay
                 Container(
@@ -72,11 +75,12 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
                       child: Padding(
                         padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children:<Widget>[
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Expanded(child: const Text('IKTOKEN DO EXECUTIVO',style: TextStyle(letterSpacing: 2.0,fontSize: 14.0,color: Colors.black,fontFamily: 'Poppins'),)),
+                                Expanded(child:  Text('IKTOKEN DO EXECUTIVO',style:head5?.copyWith(color: Colors.black, letterSpacing: 2.0),)),
                                 Container(
                                   width: 36.w,
                                   height: 36.w,
@@ -86,22 +90,27 @@ class _HomeScreenFourState extends State<HomeScreenFour> {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 15,),
+                            SizedBox(height: 15.h,),
                             const Divider(thickness: 1,color: Colors.black26,),
-                            const SizedBox(height: 10,),
+                            SizedBox(height: 10.h,),
                             Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                                decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.0),color: const Color(0xFFF1F2F7)),
-                                height: 60,
+                                padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 5.h),
+                                decoration:BoxDecoration(borderRadius: BorderRadius.circular(10.r),color: const Color(0xFFF1F2F7)),
+                                height: 60.h,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
-                                    Image.asset('assets/icons/icon_kl.png',height: 30,width: 20,fit: BoxFit.scaleDown,),
-                                    const SizedBox(width: 10,),
-                                    const Text('Escreva o iktoken',style:TextStyle(fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize:16,color: Colors.black),),
+                                    Image.asset('assets/icons/icon_kl.png',height: 30.h,width: 20.w,fit: BoxFit.scaleDown,),
+                                     SizedBox(width: 10.w,),
+                                    Text('Escreva o iktoken',style:head4?.copyWith(color: Colors.black),),
                                   ],
                                 )
                             ),
+                           const Spacer(flex: 1,),
+                            customeButton(name: 'Aplicar', onCallBack: (){}, context: context)
+
+
+
                           ],
                         ),
                       ),

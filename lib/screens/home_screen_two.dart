@@ -1,20 +1,14 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:my_ik/model/expanded_model.dart';
-import 'package:my_ik/model/menu_model.dart';
-import 'package:my_ik/screens/my_ik_screen.dart';
-import 'package:my_ik/screens/pedidos_details_screen.dart';
-import 'package:my_ik/screens/perfil_screen.dart';
-import 'package:my_ik/screens/splash_screen.dart';
 import 'package:my_ik/widget/expanded_card_widget.dart';
 import 'package:my_ik/widget/google%20_map_widget.dart';
-import 'package:my_ik/widget/menu_widget.dart';
-import 'package:my_ik/widget/navigation_widget.dart';
 
-import 'menu_sccrren.dart';
+import 'historic_screen_five.dart';
+import 'historic_screen_one.dart';
+import 'historic_screen_six.dart';
+import 'servicos _adicionais_one.dart';
+
 class HomeScreenTwo extends StatefulWidget {
   const HomeScreenTwo({Key? key}) : super(key: key);
 
@@ -26,10 +20,10 @@ class HomeScreenTwo extends StatefulWidget {
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
   List<ExpandedItem> expandedItems =[
-    ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: 'produto'),
-    ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: 'produto'),
-    ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: 'produto'),
-    ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: 'produto'),
+  ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: HistoricPageOne(),),
+        ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: HistoricPageFive(),),
+        ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: ServiceAdicionaisScreenOne(),),
+        ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: HistoricPageSix(),),
   ];
 
   @override
@@ -101,11 +95,11 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
                     // : Container(),
-             const Positioned(
-                  bottom: 30.0,
-                  //This Section is for Navigation Bar
-                  child: BottomNavigationWidget(),
-                ),
+            //  const Positioned(
+            //       bottom: 30.0,
+            //       //This Section is for Navigation Bar
+            //       child: BottomNavigationWidget(),
+            //     ),
               ],
             ),
           ),

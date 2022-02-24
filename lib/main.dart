@@ -10,6 +10,7 @@ import 'constants/app_color.dart';
 import 'helpers/all_routes.dart';
 import 'helpers/navigation_service.dart';
 import 'screens/animation_practice.dart';
+import 'screens/navigation_screens.dart';
 
 
 
@@ -41,11 +42,15 @@ class MyApp extends StatelessWidget {
         },
 
 
-      initialRoute: Routes.homeOne,
+      initialRoute: Routes.navigation,
       navigatorKey: NavigationService.navigatorKey,
       onGenerateRoute: RouteGenerator.generateRoute,
+      routes: {
+        Routes.navigation : (context)=> NavigationScreen(),
 
-      // home: AnimatedExpandedBox(),
+      },
+
+     // home: NavigationScreen(screenNum: 0),
     ),
     
   

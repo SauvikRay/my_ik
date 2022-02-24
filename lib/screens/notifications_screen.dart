@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/widget/app_bar_widget.dart';
 import 'package:my_ik/widget/navigation_widget.dart';
+
+import 'navigation_screens.dart';
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
 
@@ -20,7 +22,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor:const Color(0xFFE5E5E5),
-        appBar: const MainAppBarWidget(text:' Notificações',),
+        appBar:  MainAppBarWidget(text:' Notificações',),
         body: Container(
           height: double.infinity,
           width: double.infinity,
@@ -72,15 +74,17 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     ),
                   ],
                 ),
-              Positioned(
-                  bottom: 30.h,
-                    child: BottomNavigationWidget(),
-             ),
+            //   Positioned(
+            //       bottom: 30.h,
+            //         child: BottomNavigationWidget(),
+            //  ),
               ],
 
             ),
           ),
         ),
+        //   floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+        //  floatingActionButton:NavigationScreen(),
       ),
     );
   }

@@ -25,19 +25,13 @@ class _PedidosScreenState extends State<PedidosScreen> {
      final body1 = Theme.of(context).textTheme.bodyText1; //16,Bold,black
      final body2 = Theme.of(context).textTheme.bodyText2; //16,normal, ash
      final head5=Theme.of(context).textTheme.headline5;
-     final sub1 = Theme.of(context).textTheme.subtitle1; //14,normal, black
      final sub2 = Theme.of(context).textTheme.subtitle2; //14,normal, purple
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFE5E5E5),
         appBar: AppBar(
           //titleTextStyle:const TextStyle(fontFamily: 'Poppins', fontSize: 24, fontWeight: FontWeight.bold,color: Colors.black),
-          centerTitle: true,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          iconTheme: const IconThemeData(
-            color: Colors.purpleAccent,
-          ),
+         
           leading: IconButton(
             splashRadius: 20.r,
             onPressed: () {
@@ -74,7 +68,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                 Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                  height: (height<600) ? 0.95.sh :0.7.sh,
+                  height: (height<600) ? 0.95.sh :0.75.sh,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
@@ -128,7 +122,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Expanded(
-                            flex: 5,
+                            flex: 4,
                             child:
                                 Text('Referencia da Enccomenda', style: body2),
                           ),
@@ -210,7 +204,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                               ),
                               SvgPicture.asset(
                                 'assets/icons/location_icon.svg',
-                                color: const Color(0xFFEA12B9),
+                                color:AppColors.highLightText,
                                 height: 25.h,
                                 width: 25.w,
                                 fit: BoxFit.scaleDown,
@@ -372,7 +366,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                 ),
                  Text(
                   'Produto Individual - Tipo 0',
-                  style: head4?.copyWith(color: Colors.purpleAccent),
+                  style: head4?.copyWith(color: AppColors.highLightText),
                 ),
                 const Divider(
                   thickness: 1,
@@ -439,7 +433,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                       onPressed: () {},
                       child: Text(
                         'Ver os Artigos',
-                        style: body1,
+                        style: head3?.copyWith(color:Colors.black),
                       ),
                     ),
                     ElevatedButton(
@@ -487,7 +481,7 @@ class _PedidosScreenState extends State<PedidosScreen> {
                   onCallBack: (){},
                   ),
                  SizedBox(
-                  height: 30.h,
+                  height: 100.h,
                 ),
               ],
             ),

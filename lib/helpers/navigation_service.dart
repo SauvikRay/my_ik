@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ik/screens/perfil_screen.dart';
 
 class NavigationService {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -12,6 +13,10 @@ class NavigationService {
   static Future<dynamic> popAndReplace(String routeName) async {
     return await navigatorKey.currentState!.popAndPushNamed(routeName);
   }
+
+  static Future<dynamic> navigateToWithArgs(String routeName, {Map? args}) =>
+      navigatorKey.currentState!.pushNamed(routeName, arguments: args);
+  
 
   static get goBack => navigatorKey.currentState!.pop();
 

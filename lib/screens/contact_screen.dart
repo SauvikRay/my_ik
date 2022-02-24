@@ -29,7 +29,7 @@ class _ContactScreenState extends State<ContactScreen> {
     return SafeArea(
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
-          appBar: const MainAppBarWidget(text: 'Contacte-nos',),
+          appBar:  MainAppBarWidget(text: 'Contacte-nos',),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -56,8 +56,8 @@ class _ContactScreenState extends State<ContactScreen> {
             ),
           ),
           //bottomNavigationBar: BottomNavigationWidget(),
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-          floatingActionButton: BottomNavigationWidget(),
+        //  floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+         // floatingActionButton: BottomNavigationWidget(),
         ),
 
     );

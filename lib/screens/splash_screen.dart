@@ -12,20 +12,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    // ScreenUtil.init(
-    //   BoxConstraints(
-    //     maxWidth: MediaQuery.of(context).size.width,
-    //     maxHeight: MediaQuery.of(context).size.height,
-    //   ),
-    //   designSize:const Size(428, 926),
-    //   context: context,
-    //   minTextAdapt: true,
-    //   orientation: Orientation.portrait,
-    // );
+
 
     return SafeArea(
       child: Scaffold(
         body: Container(
+          height: double.infinity,
+          width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topRight,
@@ -37,30 +30,25 @@ class _SplashScreenState extends State<SplashScreen> {
                 ],),
           ),
 
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-              Padding(
-                   padding:  EdgeInsets.symmetric(horizontal: 40.w,),
-                   child: Center(
-                        child: Container(
-                           padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
-                           height: 125.w,
-                           width: 125.w,
-                           decoration:  BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.0.r),),color: Colors.white),
-                           child: Image.asset('assets/icons/icon_kl.png',height: 80.h,width: 54.w,fit: BoxFit.contain,color:const Color(0xFFE305B7)),
-                            ),
-                          ),
-                        ),
-                  SizedBox(height: 200.h,),
-                  Container(
-                    margin:  EdgeInsets.symmetric(horizontal: 40.w,vertical: 20.h),
-                    child: Image.asset('assets/icons/by_k_log.png',height: 160.h,width: 160.w,fit: BoxFit.contain,),
-                  )
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+             const Spacer(flex: 6,),
+            Container(
+               padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
+               height: 100.w,
+               width: 100.w,
+               decoration:  BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.0.r),),color: Colors.white),
+               child: Image.asset('assets/icons/icon_kl.png',height: 70.h,width: 50.w,fit: BoxFit.contain,color:const Color(0xFFE305B7)),
+                ),
+          const Spacer(flex:5 ,),
+              
+          Container(
+            margin:  EdgeInsets.symmetric(horizontal: 40.w,),
+            child: Image.asset('assets/icons/by_k_log.png',height: 100.w,width: 100.w,fit: BoxFit.contain,),
+          )
+            ],
           ),
         ),
       ),

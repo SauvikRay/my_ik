@@ -113,11 +113,11 @@ class _HomeScreenThreeState extends State<HomeScreenThree> {
                    ),
                  ),
                ),
-                Positioned(
-                  bottom: 30.h,
-                  //This Section is for Navigation Bar
-                  child: BottomNavigationWidget(),
-                ),
+                // Positioned(
+                //   bottom: 30.h,
+                //   //This Section is for Navigation Bar
+                //   child: BottomNavigationWidget(),
+                // ),
               ],
             ),
           ),

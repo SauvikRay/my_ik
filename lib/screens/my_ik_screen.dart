@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyKScreen extends StatefulWidget {
   const MyKScreen({Key? key}) : super(key: key);
@@ -12,9 +12,12 @@ class _MyKScreenState extends State<MyKScreen> {
   @override
   Widget build(BuildContext context) {
 
+    var w;
     return SafeArea(
       child: Scaffold(
         body: Container(
+          height: double.infinity,
+          width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -30,13 +33,16 @@ class _MyKScreenState extends State<MyKScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
+                 const Spacer(flex: 6,),
                   Container(
-                    padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 100),
-                      child: Image.asset('assets/icons/my_k.png',height: 230,width: 230,)),
+                    padding:EdgeInsets.symmetric(horizontal: 20.w,vertical: 100.h),
+                      child: Image.asset('assets/icons/my_k.png',height: 230.w,width: 230.w,)),
+                  
+                  const Spacer(flex:5 ,),
 
                   Container(
-                    margin:const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
-                    child: Image.asset('assets/icons/by_k_log.png',height: 160,width: 160,),
+                    margin: EdgeInsets.symmetric(horizontal: 40.w,vertical: 20.h),
+                    child: Image.asset('assets/icons/by_k_log.png',height: 100.w,width: 100.w,),
                   )
               ],
             ),

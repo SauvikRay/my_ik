@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_ik/constants/app_color.dart';
+import 'package:my_ik/helpers/all_routes.dart';
 import 'package:my_ik/model/expanded_model.dart';
+
+import '../helpers/navigation_service.dart';
 class ExpandedWidget extends StatelessWidget {
   const ExpandedWidget({Key? key,required this.expandedItem}) : super(key: key);
   final ExpandedItem expandedItem;
@@ -12,7 +15,13 @@ class ExpandedWidget extends StatelessWidget {
      final head3 = Theme.of(context).textTheme.headline3; // Bold 18
      final head5 = Theme.of(context).textTheme.headline5; // 14, normal
     return InkWell(
-      onTap: (){},
+      onTap: (){
+          // String route= expandedItem.path;
+           Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => expandedItem.path),);
+          
+
+      },
       child: Column(
         children: <Widget>[
           const Divider(thickness: 1,color: Colors.black26,),

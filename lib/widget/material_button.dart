@@ -22,5 +22,7 @@ Widget customeButton(
     minWidth: double.infinity,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r),),
     color:AppColors.buttonColor,
+    elevation: 5.0,
+    splashColor: Colors.white.withOpacity(0.4),
   );
 }

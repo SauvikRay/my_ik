@@ -5,6 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/app_color.dart';
 import '../model/expanded_model.dart';
 import '../widget/expanded_card_widget.dart';
+import 'historic_screen_five.dart';
+import 'historic_screen_one.dart';
+import 'historic_screen_six.dart';
+import 'servicos _adicionais_one.dart';
 class AnimatedExpandedBox extends StatefulWidget {
  const AnimatedExpandedBox({Key? key}) : super(key: key);
 
@@ -23,10 +27,10 @@ class _AnimatedExpandedBoxState extends State<AnimatedExpandedBox> {
         final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
 
          List<ExpandedItem> expandedItems =[
-    ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: 'produto'),
-    ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: 'produto'),
-    ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: 'produto'),
-    ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: 'produto'),
+   ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: HistoricPageOne(),),
+        ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: HistoricPageFive(),),
+        ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: ServiceAdicionaisScreenOne(),),
+        ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: HistoricPageSix(),),
   ];
         final widgetValue =
                      Card(
