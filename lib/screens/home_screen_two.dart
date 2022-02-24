@@ -4,6 +4,7 @@ import 'package:my_ik/model/expanded_model.dart';
 import 'package:my_ik/widget/expanded_card_widget.dart';
 import 'package:my_ik/widget/google%20_map_widget.dart';
 
+import '../data/expanded_item_data.dart';
 import 'historic_screen_five.dart';
 import 'historic_screen_one.dart';
 import 'historic_screen_six.dart';
@@ -19,12 +20,7 @@ class HomeScreenTwo extends StatefulWidget {
 
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
-  List<ExpandedItem> expandedItems =[
-  ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: HistoricPageOne(),),
-        ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: HistoricPageFive(),),
-        ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: ServiceAdicionaisScreenOne(),),
-        ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: HistoricPageSix(),),
-  ];
+ 
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_ik/constants/custome_theme.dart';
 import 'package:my_ik/screens/pedidos_details_screen.dart';
 import 'package:my_ik/screens/perfil_screen.dart';
-import 'package:my_ik/screens/register__login_screen.dart';
+import 'package:my_ik/screens/register_login_screen.dart';
 import 'package:my_ik/screens/splash_screen.dart';
 import 'package:my_ik/screens/terms_and_conditions.dart';
 import 'constants/app_color.dart';

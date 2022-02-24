@@ -21,7 +21,7 @@ import '/screens/pedidos_details_screen.dart';
 import '/screens/pedidos_screen_two.dart';
 import '/screens/perfil_screen.dart';
 
-import '/screens/register__login_screen.dart';
+import '../screens/register_login_screen.dart';
 import '/screens/servicos%20_adicionais_one.dart';
 import '/screens/servicos%20_adicionais_two.dart';
 import '/screens/terms_and_conditions.dart';

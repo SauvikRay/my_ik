@@ -4,8 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/constants/app_consotants.dart';
-import 'package:my_ik/constants/custome_theme.dart';
-import '../screens/home_screen_one.dart';
 import 'material_button.dart';
 class TextInputForm extends StatefulWidget {
   const TextInputForm({Key? key}) : super(key: key);
@@ -72,6 +70,7 @@ class _TextInputFormState extends State<TextInputForm> {
               ),
                SizedBox(height: 20.h,),
               // //TODO: Palavara Passe
+             
               TextFormField(
                 obscureText: true,
                 obscuringCharacter: '*',
@@ -98,17 +97,6 @@ class _TextInputFormState extends State<TextInputForm> {
             _showDialog();
           }
         ),
-
-        // MaterialButton(
-        //   onPressed: () async{
-        //      await _showDialog();
-        //   },
-        //   child: Text('Registar',style:  Theme.of(context).textTheme.button,),
-        //   height: 50.h,
-        //   minWidth: double.infinity,
-        //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r),),
-        //   color:AppColors.buttonColor,
-        // ),
       ],
     );
   }
@@ -189,8 +177,6 @@ class _TextInputFormState extends State<TextInputForm> {
               ),
               const Divider(color: Colors.black26,thickness: 1.0,),
               SizedBox(height: 15.h,),
-
-
               customeButton(
           context: context,
           name: 'Registar',

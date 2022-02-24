@@ -19,9 +19,7 @@ class ExpandedWidget extends StatelessWidget {
           // String route= expandedItem.path;
            Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => expandedItem.path),);
-          
-
-      },
+          },
       child: Column(
         children: <Widget>[
           const Divider(thickness: 1,color: Colors.black26,),

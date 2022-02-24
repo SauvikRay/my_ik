@@ -14,6 +14,7 @@ class HistoricPageFive extends StatefulWidget {
 class _HistoricPageFiveState extends State<HistoricPageFive> {
   @override
   Widget build(BuildContext context) {
+    //Theme
     final body1 = Theme.of(context).textTheme.bodyText1; //20,bold
     final head4 = Theme.of(context).textTheme.headline4; // 16, normal
     final head2 = Theme.of(context).textTheme.headline2; // 18, normal
@@ -23,7 +24,7 @@ class _HistoricPageFiveState extends State<HistoricPageFive> {
         child: Scaffold(
           backgroundColor:const Color(0xFFE5E5E5),
             appBar: AppBar(
-              leading: IconButton(splashRadius: 20, onPressed: (){Navigator.pop(context);} ,icon:SvgPicture.asset('assets/icons/arrow_back.svg')),
+              leading: IconButton(splashRadius: 20.r, onPressed: (){Navigator.pop(context);} ,icon:SvgPicture.asset('assets/icons/arrow_back.svg')),
             ),
           body:Align(
         alignment: Alignment.bottomCenter,

@@ -6,6 +6,7 @@ import 'package:my_ik/constants/app_color.dart';
 import 'package:my_ik/screens/pedidos_details_screen.dart';
 import 'package:my_ik/screens/perfil_screen.dart';
 import 'package:my_ik/widget/google%20_map_widget.dart';
+import '../data/expanded_item_data.dart';
 import '../model/expanded_model.dart';
 import '../widget/expanded_card_widget.dart';
 import '../widget/navigation_widget.dart';
@@ -48,12 +49,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
   Widget build(BuildContext context) {
     final head5 = Theme.of(context).textTheme.headline5; // 14, normal
     final sub2 = Theme.of(context).textTheme.subtitle2; //12,normal,
-    List<ExpandedItem> expandedItems =[
-        ExpandedItem(menuIcon: 'pedidos_icon.svg', menuText: 'Produto Individual', menuSubText: 'Envio de baixo custo', path: HistoricPageOne(),),
-        ExpandedItem(menuIcon: 'home_two_icon.svg', menuText: 'Mudança de Casa', menuSubText: 'Garante o comforto', path: HistoricPageFive(),),
-        ExpandedItem(menuIcon: 'star_icon.svg', menuText: 'O Meu Executivo Favorito', menuSubText: 'Escolha o seu executivo favorito', path: ServiceAdicionaisScreenOne(),),
-        ExpandedItem(menuIcon: 'euro_box_icon.svg', menuText: 'Preços das Clases e Serviços', menuSubText: 'Consulte o preçario', path: HistoricPageSix(),),
-      ];
+
       final widgetValue =Card(
                       color: Colors.white,
                       elevation: 5.0,

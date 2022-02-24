@@ -37,8 +37,6 @@ class TermsConditionScreen extends StatelessWidget {
               ),
             ),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-          //floatingActionButton:  BottomNavigationWidget(),
         ),
     );
   }

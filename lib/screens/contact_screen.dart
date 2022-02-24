@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_ik/constants/app_color.dart';
-import 'package:my_ik/model/contact_model.dart';
 import 'package:my_ik/widget/app_bar_widget.dart';
 import 'package:my_ik/widget/contact_page_widget.dart';
-import 'package:my_ik/widget/navigation_widget.dart';
+
+import '../data/contact_item_data.dart';
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);
 
@@ -16,11 +14,11 @@ class ContactScreen extends StatefulWidget {
 
 class _ContactScreenState extends State<ContactScreen> {
 
-  List<ContactItem> contactItems =[
-    ContactItem(smallText: 'O nosso website', contactIcon: 'globe_icon.svg', bigText: 'www.iklog.pt'),
-    ContactItem(smallText: 'Telefone', contactIcon: 'call_icon.svg', bigText: '+351 912 959 027'),
-    ContactItem(smallText: 'E-mail', contactIcon: 'email_icon.svg', bigText: 'email@iklog.pt'),
-  ];
+  // List<ContactItem> contactItems =[
+  //   ContactItem(smallText: 'O nosso website', contactIcon: 'globe_icon.svg', bigText: 'www.iklog.pt'),
+  //   ContactItem(smallText: 'Telefone', contactIcon: 'call_icon.svg', bigText: '+351 912 959 027'),
+  //   ContactItem(smallText: 'E-mail', contactIcon: 'email_icon.svg', bigText: 'email@iklog.pt'),
+  // ];
   
   @override
   Widget build(BuildContext context) { 
@@ -51,13 +49,10 @@ class _ContactScreenState extends State<ContactScreen> {
                 // SizedBox(height: 10.h,),
                  ContactPageWidget(sText: 'Localização',contColor: AppColors.highLightText,gradient: false,conHeight: 120.h,bIcon: 'location_icon.svg',aText:'Av. Manuel Violas 476 4410-137 São Félix da Marinha Portugal' ,),
                 if(height<600) SizedBox(height: 80.h,),
-          
               ],
             ),
           ),
-          //bottomNavigationBar: BottomNavigationWidget(),
-        //  floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-         // floatingActionButton: BottomNavigationWidget(),
+         
         ),
 
     );
